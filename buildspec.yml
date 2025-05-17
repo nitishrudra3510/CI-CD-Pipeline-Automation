@@ -1,0 +1,21 @@
+version: 0.3
+
+phases:
+  install:
+    runtime-versions:
+      go: 1.18
+    commands:
+      - go mod download
+
+  build:
+    commands:
+      - go build -o myapp
+
+  test:
+    commands:
+      - go test ./...
+
+artifacts:
+  files:
+    - myapp
+
